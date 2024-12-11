@@ -19,9 +19,6 @@ count_values <- function(cards)
       faceValue = as.numeric(faceValue)
     }
 
-    #Switch statement is not working
-    #switch(faceValue, "king" = 10, "queen" = 10, "jack" = 10, "ace" = 11, as.numeric(faceValue))
-
     value <- value + faceValue
   }
 

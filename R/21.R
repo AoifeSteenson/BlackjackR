@@ -1,51 +1,37 @@
-#21
-
 #To do
 
 #Need to account for a draw
 #In normal blackjack, no one wins in this case, and bets are returned
 
-#Once hit or stick is determined, dealer reveals second card
+#dealer reveals second card
 
 #Dealer hit if value is less than 17 and keeps hitting
 #unitl the value is 17 or greater.
 
 #Stress testing
 
-#Do the rest of the r package stuff
-
-#Make the code neater and more optimised
-
-#Functions:
-#blackJack() - runs the games
-#draw_card() - draws a card
-#print.cards() - print cards
-#countCards() - counts up card values (accounting for aces being 1 and 11)
-#createDeck() - ensures no duplicates
-
-#bust() - can do this or include in the countValues function
 
 create_deck <- function(n = 1) {
-  
+
   face_init <- as.character(c(1:13))
   suit_init <- c("spade", "heart", "club", "diamond")
   card <- list(suit=suit_init[1], face = face_init[1], class = "card")
   sample_data <- list()
-  
+
   for(i in 1:n) {
     for(j in 1:4) {
       for(k in 1:13){
-        suit <- suit_init[j]  
+        suit <- suit_init[j]
         face <- face_init[k]
         face <- switch(face, "1"="ace", "11"="jack", "12"="queen", "13"="king", face)
         card <- structure(list(suit=suit, face=face), class="card")
         sample_data[[52*(i-1) + (13*(j-1) + k)]] <- card
-        # Each 52th 
+        # Each 52th
       }
     }
   }
   return(sample_data)
-  
+
 }
 
 set.seed(2131)
@@ -62,12 +48,12 @@ print.card <- function(object) {
     suit <- switch(object$suit, "spade" = "♠", "heart" = "♥", "club" = "♣", "diamond" = "♦", object$suit)
     face <- switch(object$face, "queen" = "👑", object$face)
     cat("
-  # # # 
-  #",suit,"# 
+  # # #
+  #",suit,"#
   #",face,"#
   # # #
   ")
-    
+
   }
 }
 
@@ -77,8 +63,8 @@ countValues <- function(cards)
   for(i in 1:length(cards))
   {
     faceValue <- cards[[i]]$face
-    
-    
+
+
     if(faceValue == "king" | faceValue == "queen" | faceValue == "jack")
     {
       faceValue = 10
@@ -91,20 +77,17 @@ countValues <- function(cards)
     {
       faceValue = as.numeric(faceValue)
     }
-    
-    #Switch statement is not working
-    #switch(faceValue, "king" = 10, "queen" = 10, "jack" = 10, "ace" = 11, as.numeric(faceValue))
-    
+
     value <- value + faceValue
   }
-  
+
   faceValues <- sapply(cards, function(card) as.character(card$face))
-  
+
   if(value > 21 & any(faceValues == "ace"))
   {
     value - 10
   }
-  
+
   return(value)
 }
 
@@ -112,26 +95,26 @@ blackjack <- function()
 {
   shuffled_deck <- create_deck()
   card_index <- 0
-  player <- list(draw_card(), draw_card()) #Not random cards, in order 
-  dealer <- list(draw_card(), draw_card()) #Not random cards, in order 
-  
-  while(TRUE) 
+  player <- list(draw_card(), draw_card())
+  dealer <- list(draw_card(), draw_card())
+
+  while(TRUE)
   {
     print("Your Hand")
     print(player)
     print("Total Value")
     print(countValues(player))
-    
+
     print("Dealer's hand")
     print(dealer)
-    
+
     var = readline(prompt = "Hit or Stick : ")
-    
+
     if(var == "Hit" || var == "hit")
     {
       player <- append(player, list(draw_card()))
       print(player)
-      value <- countValues(player) 
+      value <- countValues(player)
       if(value > 21)
       {
         print(value)
@@ -141,7 +124,7 @@ blackjack <- function()
     }
     else if(var == "Stick" || var == "stick")
     {
-      playerValue <- countValues(player) 
+      playerValue <- countValues(player)
       dealerValue <- countValues(dealer)
       if(playerValue > 21)
       {
@@ -168,19 +151,19 @@ blackjack <- function()
     {
       print("You are talking gibberish")
     }
-    
+
     #Code for dealer to hit based on house rules, probably needs to
     #be higher up
     if(countValues(dealer) < 17)
     {
       dealer <- append(dealer, list(draw_card()))
     }
-    
-    
+
+
   }
-  
+
   var = readline(prompt = "Game over, Do you want to play again? (Yes/No)")
-  
+
   if(var == "Yes" || var == "yes")
   {
     blackjack()
@@ -189,8 +172,8 @@ blackjack <- function()
   {
     print("Goodbye")
   }
-  
-  
+
+
 }
 
 blackjack()

@@ -2,8 +2,8 @@ blackjack <- function()
 {
   shuffled_deck <- create_deck()
   card_index <- 0
-  player <- list(draw_card(), draw_card()) #Not random cards, in order
-  dealer <- list(draw_card(), draw_card()) #Not random cards, in order
+  player <- list(draw_card(), draw_card())
+  dealer <- list(draw_card(), draw_card())
 
   while(TRUE)
   {
