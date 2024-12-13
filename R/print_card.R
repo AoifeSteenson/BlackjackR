@@ -7,7 +7,7 @@
 #' @return Return Nothing
 #' @export
 #'
-#' @author Louis Thomas - <\email{louis142thomas@gmail.com}>
+#' @author Louis Thomas
 #' @author Aoife Steenson
 #' @author Jack W.
 #'
