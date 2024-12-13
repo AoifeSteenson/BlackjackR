@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(BlackjackR)
+library(Blackjack)
 ```
 
 ## Introduction
@@ -35,8 +35,14 @@ library(BlackjackR)
 
 The functions in BlackjackR include create_deck, draw_card, print_card, and count values. 
 
-create_deck creates a deck of 52 cards that are in a random order. 
+create_deck creates a deck of 52 cards that are in a random order. More than one deck may be created by changing the number n is equal to 
+```{r}
+create_deck(n = 1)
+```
 
-draw_card takes a random card from the deck.  
+
+draw_card takes the deck and selects the card at the top of the list. 
+
+
 
 
