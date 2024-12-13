@@ -1,3 +1,22 @@
+#' Printing ASCII art of each card
+#'
+#' Prints cards using ascii art
+#'
+#' @param object of class card this can be outputted from the \code{"create_deck"}
+#'
+#' @return Return Nothing
+#' @export
+#'
+#' @author Louis Thomas - <\email{louis142thomas@gmail.com}>
+#' @author Aoife Steenson
+#' @author Jack W.
+#'
+#' @seealso \code{\link{create_deck}}
+#'
+#' @examples
+#' deck <- create_deck()
+#' print(deck[[1]])
+#'
 print.card <- function(object) {
   if(class(object) == "card"){
     test <- " "
