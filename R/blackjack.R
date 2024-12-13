@@ -1,3 +1,14 @@
+#' Blackjack
+#'
+#' @description
+#' This function allows the user to play blackjack (21) through the console. Once the blackjack() function is called the user/player will be given two cards.
+#' Based on the cards drawn the player can chose to Hit or Stick. Chosing Hit will give the player another card and the choice to Hit or Stick again. Should
+#' the player chose Stick, the player's and dealer's cards will the summed up and compared to find the winner of the game. Once the game is over the player
+#' is given the chose to play again.
+#'
+#' @examples
+#' blackjack()
+#'
 blackjack <- function()
 {
   timer <- 1

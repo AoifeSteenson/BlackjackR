@@ -1,5 +1,7 @@
 #'count_values
-#' @name count_values
+#' @description
+#' This function sums up the values of all elements in a card class in a list
+#'
 #'
 #' @param cards an list of elements that inherits from the card class
 #'

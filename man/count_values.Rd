@@ -13,7 +13,7 @@ count_values(cards)
 Returns the total value of all the cards provided in the function call.
 }
 \description{
-count_values
+This function sums up the values of all elements in a card class in a list
 }
 \examples{
 shuffled_deck <- create_deck()

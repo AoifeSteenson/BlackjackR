@@ -181,7 +181,7 @@ blackjack <- function()
 
 }
 
-blackjack()
+#blackjack()
 
 
 
