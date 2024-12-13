@@ -59,6 +59,11 @@ print.card <- function(object) {
 
 countValues <- function(cards)
 {
+  #Error handling
+  if (!is.list(cards) || any(sapply(cards, function(card) !inherits(card, "card")))) {
+    stop("Input must be a list of card objects")
+  }
+
   value <- 0
   for(i in 1:length(cards))
   {
