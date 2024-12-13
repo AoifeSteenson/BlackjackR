@@ -2,12 +2,12 @@
 % Please edit documentation in R/count_values.R
 \name{count_values}
 \alias{count_values}
-\title{count_values}
+\title{Count Values}
 \usage{
 count_values(cards)
 }
 \arguments{
-\item{cards}{an list of elements that inherits from the card class}
+\item{cards}{an list of elements that inherits from the card class. Card class elements can be created from the \code{"create_deck"}}
 }
 \value{
 Returns the total value of all the cards provided in the function call.
@@ -20,4 +20,14 @@ shuffled_deck <- create_deck()
 cards <- list(draw_card(), draw_card())
 count_values(cards)
 
+}
+\seealso{
+\code{\link{create_deck}}
+}
+\author{
+Louis Thomas
+
+Aoife Steenson
+
+Jack W.
 }
