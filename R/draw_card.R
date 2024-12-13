@@ -1,4 +1,3 @@
-draw_card <- function() {
-  card_index <<- card_index + 1
+draw_card <- function(card_index) {
   return(shuffled_deck[[card_index]])
 }

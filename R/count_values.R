@@ -1,5 +1,23 @@
+#'count_values
+#' @name count_values
+#'
+#' @param cards an list of elements that inherits from the card class
+#'
+#' @return Returns the total value of all the cards provided in the function call.
+#'
+#' @examples
+#'shuffled_deck <- create_deck()
+#'cards <- list(draw_card(), draw_card())
+#'count_values(cards)
+#'
 count_values <- function(cards)
 {
+
+  #Error handling
+  if (!is.list(cards) || any(sapply(cards, function(card) !inherits(card, "card")))) {
+    stop("Input must be a list of card objects")
+  }
+
   value <- 0
   for(i in 1:length(cards))
   {

@@ -1,11 +1,17 @@
 Package: BlackjackR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Simulates a game of blackjack (21) through the console
 Version: 0.1.0
-Author: Who wrote it
+Authors@R: c(person("Aoife", "Steenson", email="aoife.steenson.2022@mumail.ie", role="aut",
+  person("Jack", "Wiersma", email="jack.wiersma.2022@mumail.ie", role="aut"),
+  person("Louis", "Thomas", email="louis.thomas.2022@mumail.ie", role="aut")
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Description: Simulates a game of blackjack through the console to allow for user input. The game is simuated by creating a deck of shuffled cards and drawing cards for both the player and the dealer.
+    The player can then use the console to Hit or Stick, based on their choice the player will either recieve another card (and given the choice to Hit or Stick again, and so on) or be given the outcome
+    of the game.
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
+Depends: R(>= 4.4.0)
+BugReports: https://github.com/AoifeSteenson/BlackjackR
+RoxygenNote: 7.3.2
