@@ -7,7 +7,7 @@
 count_values(cards)
 }
 \arguments{
-\item{cards}{an list of elements that inherits from the card class. Card class elements can be created from the \code{"create_deck"}}
+\item{cards}{an list of elements that inherits from the card class. Card class elements can be created from the \code{"create_deck"} function}
 }
 \value{
 Returns the total value of all the cards provided in the function call.
@@ -29,5 +29,5 @@ Louis Thomas
 
 Aoife Steenson
 
-Jack W.
+Jack Wiersma
 }

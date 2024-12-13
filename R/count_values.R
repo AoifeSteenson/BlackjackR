@@ -4,14 +4,14 @@
 #' This function sums up the values of all elements in a card class in a list
 #'
 #'
-#' @param cards an list of elements that inherits from the card class. Card class elements can be created from the \code{"create_deck"}
+#' @param cards an list of elements that inherits from the card class. Card class elements can be created from the \code{"create_deck"} function
 #'
 #' @return Returns the total value of all the cards provided in the function call.
 #'
 #' @export
 #' @author Louis Thomas
 #' @author Aoife Steenson
-#' @author Jack W.
+#' @author Jack Wiersma
 #'
 #' @seealso \code{\link{create_deck}}
 #'

@@ -3,3 +3,5 @@
 S3method(print,card)
 export(blackjack)
 export(count_values)
+export(create_deck)
+export(draw_card)

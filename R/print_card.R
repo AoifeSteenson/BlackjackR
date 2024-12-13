@@ -9,7 +9,7 @@
 #'
 #' @author Louis Thomas
 #' @author Aoife Steenson
-#' @author Jack W.
+#' @author Jack Wiersma
 #'
 #' @seealso \code{\link{create_deck}}
 #'

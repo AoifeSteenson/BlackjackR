@@ -28,5 +28,5 @@ Louis Thomas
 
 Aoife Steenson
 
-Jack W.
+Jack Wiersma
 }
