@@ -35,4 +35,5 @@ library(BlackjackR)
 
 The functions in BlackjackR include create_deck, draw_card, print_card, and count values. 
 
-create_deck 
+create_deck creates a deck of 52 cards that are in a random order. 
+
