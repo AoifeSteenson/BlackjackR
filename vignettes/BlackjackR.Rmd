@@ -28,3 +28,9 @@ install.packages("BlackjackR")
 devtools::install_github('AoifeSteenson/BlackjackR')
 ```
 
+After installation, the library must be loaded: 
+```{r, eval = FALSE}
+library(BlackjackR)
+```
+
+The functions in BlackjackR 
