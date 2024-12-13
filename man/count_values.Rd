@@ -7,7 +7,7 @@
 count_values(cards)
 }
 \arguments{
-\item{cards}{an list of elements that inhert from the card class}
+\item{cards}{an list of elements that inherits from the card class}
 }
 \value{
 Returns the total value of all the cards provided in the function call.
@@ -17,7 +17,7 @@ count_values
 }
 \examples{
 shuffled_deck <- create_deck()
-cards <-list(draw_card(), draw_card())
+cards <- list(draw_card(), draw_card())
 count_values(cards)
 
 }
