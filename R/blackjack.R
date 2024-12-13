@@ -1,9 +1,18 @@
 blackjack <- function()
 {
+  timer <- 1
+
   shuffled_deck <- create_deck()
   card_index <- 0
-  player <- list(draw_card(), draw_card())
-  dealer <- list(draw_card(), draw_card())
+  player <- list(draw_card(timer))
+    timer <- timer + 1
+    player[[2]] <- draw_card(timer)
+      timer <- timer+1
+
+  dealer <- list(draw_card(timer))
+    timer <- timer+1
+    dealer[[2]] <- draw_card(timer)
+      timer <- timer+1
 
   while(TRUE)
   {
@@ -20,6 +29,7 @@ blackjack <- function()
     if(var == "Hit" || var == "hit")
     {
       player <- append(player, list(draw_card()))
+        timer <- timer + 1
       print(player)
       value <- countValues(player)
       if(value > 21)
@@ -64,6 +74,7 @@ blackjack <- function()
     if(countValues(dealer) < 17)
     {
       dealer <- append(dealer, list(draw_card()))
+        timer <- timer + 1
     }
 
 
