@@ -1,0 +1,30 @@
+---
+title: "BlackjackR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{BlackjackR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(BlackjackR)
+```
+
+## Introduction
+BlackjackR is an R package which simulates a game of blackjack. In this package, a deck may be created, drawn, and printed. In addition, a value count can be done where all of the elements in a card class can be summed.   
+
+
+## How to install BlackjackR
+```{r, eval = FALSE}
+install.packages("BlackjackR")
+devtools::install_github('AoifeSteenson/BlackjackR')
+```
+
