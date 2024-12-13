@@ -37,6 +37,6 @@ The functions in BlackjackR include create_deck, draw_card, print_card, and coun
 
 create_deck creates a deck of 52 cards that are in a random order. 
 
-draw_card takes a random card from the deck 
+draw_card takes a random card from the deck.  
 
 
