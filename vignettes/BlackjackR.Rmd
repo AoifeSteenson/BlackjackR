@@ -1,5 +1,7 @@
 ---
 title: "BlackjackR"
+author: "Jack Wiersma, Aoife Steenson, Louis Thomas"
+date: " `r Sys.Date() `"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{BlackjackR}
@@ -15,11 +17,11 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(Blackjack)
+library(BlackjackR)
 ```
 
 ## Introduction
-BlackjackR is an R package which simulates a game of blackjack. In this package, a deck may be created, drawn, and printed. In addition, a value count can be done where all of the elements in a card class can be summed.   
+BlackjackR is an R package which simulates a game of blackjack. In this package, a deck may be created, drawn, and printed. A game of blackjack may also be simulated. In addition, a value count can be done where all of the elements in a card class can be summed.   
 
 
 ## How to install BlackjackR
@@ -33,16 +35,30 @@ After installation, the library must be loaded:
 library(BlackjackR)
 ```
 
-The functions in BlackjackR include create_deck, draw_card, print_card, and count values. 
+The functions in BlackjackR include blackjack, create_deck, draw_card, print.card, and count values. 
 
-create_deck creates a deck of 52 cards that are in a random order. More than one deck may be created by changing the number n is equal to 
-```{r}
-create_deck(n = 1)
+
+create_deck creates a deck of 52 cards that are in a random order. More than one deck may be created by changing the number n is equal to. 
+```{r, eval = FALSE}
+x <- create_deck(n = 1)
 ```
 
 
 draw_card takes the deck and selects the card at the top of the list. 
+```{r, eval = FALSE}
+draw_card(card_index = 1, shuffled_deck = x)
+```
 
+
+print_card takes the card that was drawn and prints a picture of the card, or can any card can be selected to print.  
+```{r, eval = FALSE}
+print.card(object = x)
+```
+
+count_values sums all of the values of the elements in a card class
+```{r, eval = FALSE}
+count_values(x)
+```
 
 
 
