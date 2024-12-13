@@ -6,7 +6,12 @@
 #' the player chose Stick, the player's and dealer's cards will the summed up and compared to find the winner of the game. Once the game is over the player
 #' is given the chose to play again.
 #'
+#' @return Return Nothing
+#'
 #'@export
+#' @author Louis Thomas
+#' @author Aoife Steenson
+#' @author Jack W.
 #'
 #' @examples
 #' blackjack()
