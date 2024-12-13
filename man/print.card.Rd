@@ -2,11 +2,16 @@
 % Please edit documentation in R/print_card.R
 \name{print.card}
 \alias{print.card}
+<<<<<<< HEAD
 \title{Printing cards}
+=======
+\title{Printing ASCII art of each card}
+>>>>>>> 634c2611a7c86b8e2b0ec4a21dc336d35430ad36
 \usage{
 \method{print}{card}(object)
 }
 \arguments{
+<<<<<<< HEAD
 \item{object}{}
 }
 \value{
@@ -14,4 +19,28 @@ test
 }
 \description{
 Printing cards
+=======
+\item{object}{of class card this can be outputted from the \code{"create_deck"}}
+}
+\value{
+Return Nothing
+}
+\description{
+Prints cards using ascii art
+}
+\examples{
+deck <- create_deck()
+print(deck[[1]])
+
+}
+\seealso{
+\code{\link{create_deck}}
+}
+\author{
+Louis Thomas - <\email{louis142thomas@gmail.com}>
+
+Aoife Steenson
+
+Jack W.
+>>>>>>> 634c2611a7c86b8e2b0ec4a21dc336d35430ad36
 }

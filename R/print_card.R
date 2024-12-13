@@ -1,19 +1,22 @@
-#' Printing cards
+#' Printing ASCII art of each card
 #'
-#' @description
-#' Prints the card(s) passed in during the function call to the console. When the card is printed, it mimics the look of an actual card design.
+#' Prints cards using ascii art
 #'
+#' @param object of class card this can be outputted from the \code{"create_deck"}
 #'
-#' @param object
-#'
-#' @return prints the cards object inputted to the console
+#' @return Return Nothing
 #' @export
 #'
+#' @author Louis Thomas
+#' @author Aoife Steenson
+#' @author Jack W.
+#'
+#' @seealso \code{\link{create_deck}}
+#'
 #' @examples
-#' shuffled_deck <- create_deck()
-#' card <- draw_card()
-#' print(card)
-print(cards)
+#' deck <- create_deck()
+#' print(deck[[1]])
+#'
 print.card <- function(object) {
   if(class(object) == "card"){
     test <- " "
