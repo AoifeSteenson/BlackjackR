@@ -1,4 +1,5 @@
 #'count_values
+#'
 #' @description
 #' This function sums up the values of all elements in a card class in a list
 #'
@@ -6,6 +7,8 @@
 #' @param cards an list of elements that inherits from the card class
 #'
 #' @return Returns the total value of all the cards provided in the function call.
+#'
+#' @export
 #'
 #' @examples
 #'shuffled_deck <- create_deck()
