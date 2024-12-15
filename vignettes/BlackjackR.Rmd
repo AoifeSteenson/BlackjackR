@@ -61,4 +61,11 @@ count_values(x)
 ```
 
 
+blackjack allows the user to simulate a game of blackjack
+```{r}
+blackjack()
+```
+```{r}
+
+```
 
