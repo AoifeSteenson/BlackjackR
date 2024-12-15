@@ -1,16 +1,3 @@
-#To do
-
-#Need to account for a draw
-#In normal blackjack, no one wins in this case, and bets are returned
-
-#dealer reveals second card
-
-#Dealer hit if value is less than 17 and keeps hitting
-#unitl the value is 17 or greater.
-
-#Stress testing
-
-
 create_deck <- function(n = 1) {
 
   face_init <- as.character(c(1:13))
@@ -38,8 +25,7 @@ set.seed(2131)
 shuffled_deck <- sample(create_deck())
 card_index <- 0
 
-draw_card <- function() {
-  card_index <<- card_index + 1
+draw_card <- function(card_index, shuffled_deck) {
   return(shuffled_deck[[card_index]])
 }
 
@@ -100,10 +86,20 @@ countValues <- function(cards)
 
 blackjack <- function()
 {
-  shuffled_deck <- create_deck()
-  card_index <- 0
-  player <- list(draw_card(), draw_card())
-  dealer <- list(draw_card(), draw_card())
+  timer <- 1
+
+  shuffled_deck <- sample(create_deck())
+  #shuffled_deck <- load_data()
+  #card_index <- 0
+  player <- list(draw_card(timer, shuffled_deck))
+  timer <- timer + 1
+  player[[2]] <- draw_card(timer, shuffled_deck)
+  timer <- timer+1
+
+  dealer <- list(draw_card(timer, shuffled_deck))
+  timer <- timer+1
+  dealer[[2]] <- draw_card(timer, shuffled_deck)
+  timer <- timer+1
 
   while(TRUE)
   {
@@ -115,12 +111,32 @@ blackjack <- function()
     print("Dealer's hand")
     print(dealer)
 
+    if(countValues(dealer) < 17)
+    {
+      dealer <- append(dealer, list(draw_card(timer, shuffled_deck)))
+      timer <- timer + 1
+
+      print("The dealer hits")
+
+      value <- countValues(dealer)
+      if(value > 21)
+      {
+        print(paste("Dealers value: ", value))
+        print("The dealer has gone Bust, you win. Congratulations")
+        break
+
+      }
+    }
+
     var = readline(prompt = "Hit or Stick : ")
 
     if(var == "Hit" || var == "hit")
     {
-      player <- append(player, list(draw_card()))
-      print(player)
+      newCard <- list(draw_card(timer, shuffled_deck))
+      player <- append(player, newCard)
+      timer <- timer + 1
+      print("New Card")
+      print(newCard)
       value <- countValues(player)
       if(value > 21)
       {
@@ -128,6 +144,7 @@ blackjack <- function()
         print("You have gone Bust")
         break
       }
+
     }
     else if(var == "Stick" || var == "stick")
     {
@@ -139,31 +156,31 @@ blackjack <- function()
         print("You have gone Bust")
         break
       }
-      else if(playerValue > dealerValue) #Need to account for a draw
+      else if(playerValue > dealerValue)
       {
         print(paste("Your value: ", playerValue))
         print(paste("Dealers value: ", dealerValue))
-        print("Congardulations you have won!!")
+        print("Congratulations you have won!!")
         break
       }
-      else
+      else if(playerValue < dealerValue)
       {
         print(paste("Your value: ", playerValue))
         print(paste("Dealers value: ", dealerValue))
         print("House wins, try again next time")
         break
       }
+      else
+      {
+        print(paste("Your value: ", playerValue))
+        print(paste("Dealers value: ", dealerValue))
+        print("It's a draw, no one wins. Try again next time")
+        break
+      }
     }
     else
     {
       print("You are talking gibberish")
-    }
-
-    #Code for dealer to hit based on house rules, probably needs to
-    #be higher up
-    if(countValues(dealer) < 17)
-    {
-      dealer <- append(dealer, list(draw_card()))
     }
 
 
@@ -184,3 +201,4 @@ blackjack <- function()
 }
 
 #blackjack()
+
