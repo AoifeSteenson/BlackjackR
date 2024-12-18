@@ -4,10 +4,12 @@
 \alias{print.card}
 \title{Printing ASCII art of each card}
 \usage{
-\method{print}{card}(object)
+\method{print}{card}(x, ...)
 }
 \arguments{
-\item{object}{of class card this can be outputted from the \code{"create_deck"}}
+\item{x}{of class card this can be outputted from the \code{"create_deck"}}
+
+\item{...}{further arguments passed to or from other methods}
 }
 \value{
 Return Nothing
