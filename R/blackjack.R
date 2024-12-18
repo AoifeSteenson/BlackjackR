@@ -120,7 +120,7 @@ blackjack <- function(sim = TRUE)
 
   }
 
-  if(sim == TRUE) {var = n}
+  if(sim == TRUE) {var = "n"}
   else {var = readline(prompt = "Game over, Do you want to play again? (Yes(y)/No(n))")}
 
   if(tolower(var) == "yes" || tolower(var) == "y")
