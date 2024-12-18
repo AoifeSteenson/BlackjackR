@@ -1,12 +1,24 @@
+#' Title
+#'
+#' @param face an argument from 1 to 13 about what face you want your card to be.
+#'  The changing of the value to the character, i.e. 1 to Ace, 11 to Jack, etc. Are done in the function.
+#'  If an out of bounds number is inputted it will default to an Ace
+#' @param suit an argument for the type of suits: "spade", "heart", "club", "diamond".
+#'  If wrong face is inputted it will default to "spade"
+#'
+#' @return
+#' @export
+#'
+#' @examples
 create_card <- function(face = c(1:13), suit = c("spade", "heart", "club", "diamond")) {
 
-  if(face >= 13 & face <= 1) {
-    warning("Out of bounds exceptions")
+  if((face >= 13) || (face <= 1)) {
+    warning("Suit out of bounds, changing to ace")
     face <- 1
   }
   suit <- tolower(suit)
   if(suit %in% c("spade", "heart", "club", "diamond") == FALSE){
-    warning("Not in the suit options")
+    warning("Not in the suit options, changing to spade")
     suit <- "spade"
   }
 
