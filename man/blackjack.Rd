@@ -4,7 +4,10 @@
 \alias{blackjack}
 \title{Blackjack}
 \usage{
-blackjack()
+blackjack(sim = TRUE)
+}
+\arguments{
+\item{sim}{of class Boolean. This is done originally to fix a devtools infinite loop. But repurposed to run a simulation of a game.}
 }
 \value{
 Return Nothing

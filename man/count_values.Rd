@@ -17,7 +17,7 @@ This function sums up the values of all elements in a card class in a list
 }
 \examples{
 shuffled_deck <- create_deck()
-cards <- list(draw_card(), draw_card())
+cards <- list(draw_card(1, shuffled_deck), draw_card(2, shuffled_deck))
 count_values(cards)
 
 }
