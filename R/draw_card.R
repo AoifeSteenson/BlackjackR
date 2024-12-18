@@ -23,5 +23,9 @@
 #' card_index <- 23
 #' draw_card(23, shuffled_deck)
 draw_card <- function(card_index, shuffled_deck) {
-  return(shuffled_deck[[card_index]])
+  if(card_index >= 1 & card_index <= length(shuffled_deck)){
+    return(shuffled_deck[[card_index]])
+  } else {
+    stop("Out of Bounds of the deck error")
+  }
 }

@@ -31,41 +31,47 @@ devtools::install_github('AoifeSteenson/BlackjackR')
 ```
 
 After installation, the library must be loaded: 
-```{r, eval = FALSE}
+```{r, eval= FALSE}
 library(BlackjackR)
 ```
 
 The functions in BlackjackR include blackjack, create_deck, draw_card, print.card, and count values. 
 
-
-create_deck creates a deck of 52 cards that are in a random order. More than one deck may be created by changing the number n is equal to. 
-```{r, eval = FALSE}
-x <- create_deck(n = 1)
-```
-
-
-draw_card takes the deck and selects the card at the top of the list. 
-```{r, eval = FALSE}
-draw_card(card_index = 1, shuffled_deck = x)
-```
-
-
-print_card takes the card that was drawn and prints a picture of the card, or can any card can be selected to print.  
-```{r, eval = FALSE}
-print.card(object = x)
-```
-
-count_values sums all of the values of the elements in a card class
-```{r, eval = FALSE}
-count_values(x)
-```
-
-
-blackjack() allows the user to simulate a game of blackjack
+## blackjack()
+This function allows the user to simulate a game of blackjack
 ```{r}
 blackjack()
 ```
-```{r}
 
+## count_values()
+This function sums all of the values of the elements in a card class
+```{r, eval = FALSE}
+shuffled_deck <- create_deck()
+cards <- list(draw_card(), draw_card())
+count_values(cards)
+```
+
+## create_deck() 
+This function creates a deck of 52 cards that are in a random order. More than one deck may be created by changing the number n is equal to. 
+```{r, eval = FALSE}
+shuffled_deck <- sample(create_deck())
+```
+
+
+## draw_card() 
+This function takes a card from the shuffled deck 
+```{r, eval = FALSE}
+shuffled_deck <- sample(create_deck())
+card_index <- 23
+draw_card(23, shuffled_deck)
+```
+
+
+## print_card() 
+This function prints a picture of any card in the deck 
+```{r, eval = FALSE}
+deck <- create_deck()
+print(deck[[6]])
+print(deck[[13]])
 ```
 
