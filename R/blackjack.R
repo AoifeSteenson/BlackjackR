@@ -6,6 +6,8 @@
 #' the player chose Stick, the player's and dealer's cards will the summed up and compared to find the winner of the game. Once the game is over the player
 #' is given the chose to play again.
 #'
+#' @param sim of class Boolean. This is done originally to fix a devtools infinite loop. But repurposed to run a simulation of a game.
+#'
 #' @return Return Nothing
 #'
 #'@export
@@ -16,7 +18,7 @@
 #' @examples
 #' blackjack()
 #'
-blackjack <- function()
+blackjack <- function(sim = TRUE)
 {
   timer <- 1
 
@@ -37,19 +39,19 @@ blackjack <- function()
     print("Your Hand")
     print(player)
     print("Total Value")
-    print(countValues(player))
+    print(count_values(player))
 
     print("Dealer's hand")
     print(dealer)
 
-    if(countValues(dealer) < 17)
+    if(count_values(dealer) < 17)
     {
       dealer <- append(dealer, list(draw_card(timer, shuffled_deck)))
       timer <- timer + 1
 
       print("The dealer hits")
 
-      value <- countValues(dealer)
+      value <- count_values(dealer)
       if(value > 21)
       {
         print(paste("Dealers value: ", value))
@@ -59,16 +61,17 @@ blackjack <- function()
       }
     }
 
-    var = readline(prompt = "Hit or Stick : ")
+    if(sim == TRUE){var = "h"}
+    else {var = readline(prompt = "Hit(h) or Stick(s) : ")}
 
-    if(var == "Hit" || var == "hit")
+    if(tolower(var) == "hit" || tolower(var) == "h")
     {
       newCard <- list(draw_card(timer, shuffled_deck))
       player <- append(player, newCard)
       timer <- timer + 1
       print("New Card")
       print(newCard)
-      value <- countValues(player)
+      value <- count_values(player)
       if(value > 21)
       {
         print(value)
@@ -77,10 +80,10 @@ blackjack <- function()
       }
 
     }
-    else if(var == "Stick" || var == "stick")
+    else if(tolower(var) == "stick")
     {
-      playerValue <- countValues(player)
-      dealerValue <- countValues(dealer)
+      playerValue <- count_values(player)
+      dealerValue <- count_values(dealer)
       if(playerValue > 21)
       {
         print(value)
@@ -117,13 +120,14 @@ blackjack <- function()
 
   }
 
-  var = readline(prompt = "Game over, Do you want to play again? (Yes/No)")
+  if(sim == TRUE) {var = n}
+  else {var = readline(prompt = "Game over, Do you want to play again? (Yes(y)/No(n))")}
 
-  if(var == "Yes" || var == "yes")
+  if(tolower(var) == "yes" || tolower(var) == "y")
   {
     blackjack()
   }
-  else
+  else if(tolower(var) == "no" || tolower(var) == "n")
   {
     print("Goodbye")
   }
