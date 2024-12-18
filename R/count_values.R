@@ -1,5 +1,33 @@
+#'Count Values
+#'
+#' @description
+#' This function sums up the values of all elements in a card class in a list
+#'
+#'
+#' @param cards an list of elements that inherits from the card class. Card class elements can be created from the \code{"create_deck"} function
+#'
+#' @return Returns the total value of all the cards provided in the function call.
+#'
+#' @export
+#' @author Louis Thomas
+#' @author Aoife Steenson
+#' @author Jack Wiersma
+#'
+#' @seealso \code{\link{create_deck}}
+#'
+#' @examples
+#'shuffled_deck <- create_deck()
+#'cards <- list(draw_card(), draw_card())
+#'count_values(cards)
+#'
 count_values <- function(cards)
 {
+
+  #Error handling
+  if (!is.list(cards) || any(sapply(cards, function(card) !inherits(card, "card")))) {
+    stop("Input must be a list of card objects")
+  }
+
   value <- 0
   for(i in 1:length(cards))
   {
@@ -18,9 +46,6 @@ count_values <- function(cards)
     {
       faceValue = as.numeric(faceValue)
     }
-
-    #Switch statement is not working
-    #switch(faceValue, "king" = 10, "queen" = 10, "jack" = 10, "ace" = 11, as.numeric(faceValue))
 
     value <- value + faceValue
   }

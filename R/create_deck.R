@@ -1,3 +1,24 @@
+#' Creating n decks of 52 playing cards
+#'
+#' @description
+#' create_deck creates n amount of decks (where n defaults to 1) of 52 playing cards. This function is used in the \code{"blackjack"} function to
+#' created the deck used. Once the deck(s) are created cards from the deck(s) can be drawn using the \code{"draw_card"} function. The card can then
+#' be printed using the \code{"print"} function that has been design for the card class.
+#'
+#'
+#' @param n the number of decks of playing cards to be created
+#'
+#' @author Louis Thomas
+#' @author Aoife Steenson
+#' @author Jack Wiersma
+#'
+#' @return returns n amount of decks
+#' @export
+#'
+#' @seealso \code{\link{create_deck}, \link{draw_card}, \link{blackjack}}
+#'
+#' @examples
+#' shuffled_deck <- sample(create_deck())
 create_deck <- function(n = 1) {
 
   face_init <- as.character(c(1:13))
