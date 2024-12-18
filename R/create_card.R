@@ -10,6 +10,11 @@
 #' @export
 #'
 #' @examples
+#' # A wrong input for the create card function:
+#' create_card(22, "wrong-word")
+#'
+#' # Think of a card? Were you thinking of a:
+#' create_card(9, "heart")
 create_card <- function(face = c(1:13), suit = c("spade", "heart", "club", "diamond")) {
 
   if((face >= 13) || (face <= 1)) {
@@ -28,3 +33,4 @@ create_card <- function(face = c(1:13), suit = c("spade", "heart", "club", "diam
 
   return(card)
 }
+
