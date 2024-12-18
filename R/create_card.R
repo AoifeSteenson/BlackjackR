@@ -1,13 +1,17 @@
 #' Title
 #'
+#' @description
+#'  This function creates a card specified by the user
+#'
 #' @param face an argument from 1 to 13 about what face you want your card to be.
 #'  The changing of the value to the character, i.e. 1 to Ace, 11 to Jack, etc. Are done in the function.
 #'  If an out of bounds number is inputted it will default to an Ace
 #' @param suit an argument for the type of suits: "spade", "heart", "club", "diamond".
 #'  If wrong face is inputted it will default to "spade"
 #'
-#' @return
+#' @return object of class card
 #' @export
+#'
 #'
 #' @examples
 #' # A wrong input for the create card function:
@@ -15,6 +19,12 @@
 #'
 #' # Think of a card? Were you thinking of a:
 #' create_card(9, "heart")
+#'
+#' @seealso \code{\link{create_deck}}
+#'
+#' @author Louis Thomas
+#' @author Aoife Steenson
+#' @author Jack Wiersma
 create_card <- function(face = c(1:13), suit = c("spade", "heart", "club", "diamond")) {
 
   if((face >= 13) || (face <= 1)) {
