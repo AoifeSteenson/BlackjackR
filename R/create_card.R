@@ -27,7 +27,7 @@
 #' @author Jack Wiersma
 create_card <- function(face = c(1:13), suit = c("spade", "heart", "club", "diamond")) {
 
-  if((face >= 13) || (face <= 1)) {
+  if((face >= 14) || (face <= 1)) {
     warning("Suit out of bounds, changing to ace")
     face <- 1
   }

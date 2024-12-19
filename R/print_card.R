@@ -20,15 +20,21 @@
 #'
 print.card <- function(x, ...) {
   if(class(x) == "card"){
-    test <- " "
-    suit <- switch(x$suit, "spade" = " ♠ ", "heart" = " ♥ ", "club" = " ♣ ", "diamond" = " ♦ ", x$suit)
+
+    test_suit <- switch(x$suit,
+                        "spade" = "    _    \n      ( ) \n       |",
+                        "heart" = "  ( V ) \n      \\ / ",
+                        "club" = "   ( ) \n     (_x_)",
+                        "diamond" = "    /\\ \n       \\/",
+                        x$suit)
     face <- switch(x$face, "queen" = " Q ", "king" = " K ",
                    "jack" = " J " , "ace" = " A ", "10" = " 10", paste0(" ", x$face," "))
-    cat("
-  # # # #
-  #",suit,"#
-  #",face,"#
-  # # # #
+    cat("",face, "of", x$suit, "
+  # # # # # #
+  ",test_suit,"
+  # # # # # #
+  # #",face,"# #
+  # # # # # #
   ")
   }
 }
