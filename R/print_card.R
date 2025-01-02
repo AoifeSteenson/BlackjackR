@@ -19,7 +19,11 @@
 #' print(deck[[1]])
 #'
 print.card <- function(x, ...) {
+
   if(class(x) == "card"){
+
+    if(is.na(x$suit) | is.na(x$face)) {warning("NA's found in unprinted cards")}
+    else {
 
     test_suit <- switch(x$suit,
                         "spade" = "    _    \n      ( ) \n       |",
@@ -36,5 +40,6 @@ print.card <- function(x, ...) {
   # #",face,"# #
   # # # # # #
   ")
+    }
   }
 }
