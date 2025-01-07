@@ -20,7 +20,7 @@
 #'
 print.card <- function(x, ...) {
 
-  if(class(x) == "card"){
+  if(inherits(x, "card")){
 
     if(is.na(x$suit) | is.na(x$face)) {warning("NA's found in unprinted cards")}
     else {
