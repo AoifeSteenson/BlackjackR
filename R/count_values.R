@@ -47,7 +47,7 @@ count_values <- function(cards)
       {
         faceValue = 11
       }
-      else if(is.numeric(faceValue) %in% as.character(c(1:10)))
+      else if(faceValue %in% as.character(c(1:10)))
       {
         faceValue = as.numeric(faceValue)
       }
