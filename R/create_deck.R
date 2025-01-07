@@ -15,7 +15,7 @@
 #' @return returns n amount of decks
 #' @export
 #'
-#' @seealso \code{\link{create_deck}, \link{draw_card}, \link{blackjack}}
+#' @seealso \code{\link{create_deck}, \link{draw_card}, \link{blackjack} \link{print.card}}
 #'
 #' @examples
 #' shuffled_deck <- sample(create_deck())
