@@ -1,7 +1,7 @@
 #' Title
 #'
 #' @description
-#'  This function creates a card specified by the user
+#'  This function creates a card specified by the user. If nothing is specified it can generate a random card
 #'
 #' @param face an argument from 1 to 13 about what face you want your card to be.
 #'  The changing of the value to the character, i.e. 1 to Ace, 11 to Jack, etc. Are done in the function.
@@ -25,7 +25,8 @@
 #' @author Louis Thomas
 #' @author Aoife Steenson
 #' @author Jack Wiersma
-create_card <- function(face = c(1:13), suit = c("spade", "heart", "club", "diamond")) {
+create_card <- function(face = round(runif(1, 1, 13)),
+                        suit = c("spade", "heart", "club", "diamond")[runif(1,1,4)]) {
 
   if((face >= 14) || (face < 1)) {
     warning("Suit out of bounds, changing to ace")
