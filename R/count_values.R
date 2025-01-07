@@ -31,33 +31,23 @@ count_values <- function(cards)
   value <- 0
   for(i in 1:length(cards))
   {
-    if(any(is.na(cards[[i]]))) {
-      warn_msg <- paste0("NA's found in index: ", as.character(i),", of cards")
-      warning(warn_msg)
-    }
-
     faceValue <- cards[[i]]$face
 
-    if(!is.na(faceValue)){
-      if(faceValue == "king" | faceValue == "queen" | faceValue == "jack")
-      {
-        faceValue = 10
-      }
-      else if(faceValue == "ace")
-      {
-        faceValue = 11
-      }
-      else if(is.numeric(faceValue) %in% as.character(c(1:10)))
-      {
-        faceValue = as.numeric(faceValue)
-      }
-      else{
-        warning("faceValue is not a possible value")
-        faceValue <- 0
-      }
-    } else {faceValue <- 0}
 
-      value <- value + faceValue
+    if(faceValue == "king" | faceValue == "queen" | faceValue == "jack")
+    {
+      faceValue = 10
+    }
+    else if(faceValue == "ace")
+    {
+      faceValue = 11
+    }
+    else
+    {
+      faceValue = as.numeric(faceValue)
+    }
+
+    value <- value + faceValue
   }
 
   faceValues <- sapply(cards, function(card) as.character(card$face))
@@ -69,4 +59,3 @@ count_values <- function(cards)
 
   return(value)
 }
-
