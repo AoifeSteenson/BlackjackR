@@ -5,9 +5,11 @@
 #'
 #' @param face an argument from 1 to 13 about what face you want your card to be.
 #'  The changing of the value to the character, i.e. 1 to Ace, 11 to Jack, etc. Are done in the function.
-#'  If an out of bounds number is inputted it will default to an Ace
+#'  If an out of bounds number is inputted it will default to an Ace.
+#'  If field is left blank will generate a random number.
 #' @param suit an argument for the type of suits: "spade", "heart", "club", "diamond".
-#'  If wrong face is inputted it will default to "spade"
+#'  If wrong face is inputted it will default to "spade".
+#'  If field is empty will pick a random suit.
 #'
 #' @return object of class card
 #' @export
