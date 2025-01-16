@@ -21,7 +21,7 @@ be printed using the \code{"print"} function that has been design for the card c
 shuffled_deck <- sample(create_deck())
 }
 \seealso{
-\code{\link{create_deck}, \link{draw_card}, \link{blackjack}}
+\code{\link{create_deck}, \link{draw_card}, \link{blackjack} \link{print.card}}
 }
 \author{
 Louis Thomas

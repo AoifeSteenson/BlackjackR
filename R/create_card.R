@@ -14,6 +14,7 @@
 #' @return object of class card
 #' @export
 #'
+#'@importFrom stats "runif"
 #'
 #' @examples
 #' # A wrong input for the create card function:
@@ -28,7 +29,7 @@
 #' @author Aoife Steenson
 #' @author Jack Wiersma
 create_card <- function(face = round(runif(1, 1, 13)),
-                        suit = c("spade", "heart", "club", "diamond")[runif(1,1,4)]) {
+                        suit = c("spade", "heart", "club", "diamond")[stats::runif(1,1,4)]) {
 
   if((face >= 14) || (face < 1)) {
     warning("Suit out of bounds, changing to ace")

@@ -4,21 +4,26 @@
 \alias{create_card}
 \title{Title}
 \usage{
-create_card(face = c(1:13), suit = c("spade", "heart", "club", "diamond"))
+create_card(
+  face = round(runif(1, 1, 13)),
+  suit = c("spade", "heart", "club", "diamond")[stats::runif(1, 1, 4)]
+)
 }
 \arguments{
 \item{face}{an argument from 1 to 13 about what face you want your card to be.
 The changing of the value to the character, i.e. 1 to Ace, 11 to Jack, etc. Are done in the function.
-If an out of bounds number is inputted it will default to an Ace}
+If an out of bounds number is inputted it will default to an Ace.
+If field is left blank will generate a random number.}
 
 \item{suit}{an argument for the type of suits: "spade", "heart", "club", "diamond".
-If wrong face is inputted it will default to "spade"}
+If wrong face is inputted it will default to "spade".
+If field is empty will pick a random suit.}
 }
 \value{
 object of class card
 }
 \description{
-This function creates a card specified by the user
+This function creates a card specified by the user. If nothing is specified it can generate a random card
 }
 \examples{
 # A wrong input for the create card function:
