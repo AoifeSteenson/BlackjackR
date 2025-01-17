@@ -38,40 +38,48 @@ library(BlackjackR)
 The functions in BlackjackR include blackjack, create_deck, draw_card, print.card, and count values. 
 
 ## blackjack()
-This function allows the user to simulate a game of blackjack
+This function allows the user to simulate a game of blackjack. When this function is used, the user will be given two cards which they then can choose to keep the cards or "hit" which gives the player another card. If the player chooses stick, the player's cards wil be summed and compared to determine if the player or dealer won the game. The player will be given the option to play again. 
 ```{r}
 blackjack()
 ```
 
 ## count_values()
-This function sums all of the values of the elements in a card class
+This function sums all of the values of the elements in a card class. 
 ```{r, eval = FALSE}
 shuffled_deck <- create_deck()
-cards <- list(draw_card(), draw_card())
+cards <- list(draw_card(1, shuffled_deck), draw_card(2, shuffled_deck))
 count_values(cards) 
 ```
 
+## create_card()
+This function allows the user to create a card that can be specified. A warning will be generated if the user tries to generate a card that is not in the suit options and changes to an appropriate suit.   
+```{r}
+create_card(2, "spade")
+
+create_card(10, "wrong_word")
+```
+
 ## create_deck() 
-This function creates a deck of 52 cards that are in a random order. More than one deck may be created by changing the number n is equal to. 
+This function creates n amount of decks with 52 cards in each deck. It is used in the `blackjack()` function to generate a deck. Once the decks have been generated, the `draw_card()` function may be used
 ```{r, eval = FALSE}
 shuffled_deck <- sample(create_deck())
 ```
 
 
 ## draw_card() 
-This function takes a card from the shuffled deck 
+This function draws a card from the shuffled deck created. If the user inputs a number out of bounds, an error message appears notifing the user the number is out of bounds.    
 ```{r, eval = FALSE}
 shuffled_deck <- sample(create_deck())
-card_index <- 23
-draw_card(23, shuffled_deck)
+card_index <- 13
+draw_card(13, shuffled_deck)
 ```
 
 
 ## print_card() 
-This function prints a picture of any card in the deck 
+This function prints a picture of any card in the deck created. 
 ```{r, eval = FALSE}
 deck <- create_deck()
 print(deck[[6]])
-print(deck[[13]])
+print(deck[[25]])
 ```
 
