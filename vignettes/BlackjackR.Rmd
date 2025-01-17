@@ -48,7 +48,7 @@ This function sums all of the values of the elements in a card class
 ```{r, eval = FALSE}
 shuffled_deck <- create_deck()
 cards <- list(draw_card(), draw_card())
-count_values(cards)
+count_values(cards) 
 ```
 
 ## create_deck() 
