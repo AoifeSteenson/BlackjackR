@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^R/21\.R$
+^doc$
+^Meta$
