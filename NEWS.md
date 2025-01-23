@@ -1,3 +1,8 @@
 # BlackjackR 0.1.0
 
-* Initial CRAN submission.
+* Added NEWS.md file
+* Project submission version
+
+# BlackjackR 0.1.0
+
+* Initial version.

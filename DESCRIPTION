@@ -1,7 +1,7 @@
 Package: BlackjackR
 Type: Package
 Title: Simulates a game of blackjack (21) through the console
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(person("Aoife", "Steenson", email="aoife.steenson.2022@mumail.ie", role=c("aut")),
   person("Jack", "Wiersma", email="jack.wiersma.2022@mumail.ie", role=c("aut")),
   person("Louis", "Thomas", email="louis.thomas.2022@mumail.ie", role=c("aut", "cre")))
