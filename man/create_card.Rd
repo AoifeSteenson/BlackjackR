@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_card.R
 \name{create_card}
 \alias{create_card}
-\title{Title}
+\title{Creating a card}
 \usage{
 create_card(
   face = round(runif(1, 1, 13)),

@@ -1,4 +1,4 @@
-#'Count Values
+#'Count Values of Cards
 #'
 #' @description
 #' This function sums up the values of all elements in a card class in a list

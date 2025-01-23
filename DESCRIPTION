@@ -12,7 +12,7 @@ License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Depends: R(>= 4.4.0)
-BugReports: https://github.com/AoifeSteenson/BlackjackR
+URL: https://github.com/AoifeSteenson/BlackjackR
 RoxygenNote: 7.3.2
 Date: 2024-12-18
 Suggests: 

@@ -1,4 +1,4 @@
-#' Title
+#' Creating a card
 #'
 #' @description
 #'  This function creates a card specified by the user. If nothing is specified it can generate a random card

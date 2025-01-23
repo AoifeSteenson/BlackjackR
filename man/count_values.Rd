@@ -2,7 +2,7 @@
 % Please edit documentation in R/count_values.R
 \name{count_values}
 \alias{count_values}
-\title{Count Values}
+\title{Count Values of Cards}
 \usage{
 count_values(cards)
 }
