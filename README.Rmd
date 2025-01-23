@@ -55,6 +55,13 @@ blackjack(sim = TRUE)
 ```
 
 
+Another example showing how to create a card
+
+```{r}
+create_card(9, "heart")
+```
+
+
 A more thorough introduction with more examples and use cases for the methods is provided in the `BlackjackR` vignette.
 
 
