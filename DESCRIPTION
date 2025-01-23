@@ -5,8 +5,8 @@ Version: 0.1.1
 Authors@R: c(person("Aoife", "Steenson", email="aoife.steenson.2022@mumail.ie", role=c("aut")),
   person("Jack", "Wiersma", email="jack.wiersma.2022@mumail.ie", role=c("aut")),
   person("Louis", "Thomas", email="louis.thomas.2022@mumail.ie", role=c("aut", "cre")))
-Description: Simulates a game of blackjack through the console to allow for user input. The game is simuated by creating a deck of shuffled cards and drawing cards for both the player and the dealer.
-    The player can then use the console to Hit or Stick, based on their choice the player will either recieve another card (and given the choice to Hit or Stick again, and so on) or be given the outcome
+Description: Simulates a game of blackjack through the console to allow for user input. The game is simulated by creating a deck of shuffled cards and drawing cards for both the player and the dealer.
+    The player can then use the console to Hit or Stick, based on their choice the player will either receive another card (and given the choice to Hit or Stick again, and so on) or be given the outcome
     of the game.
 License: GPL (>= 3)
 Encoding: UTF-8
