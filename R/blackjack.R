@@ -80,7 +80,7 @@ blackjack <- function(sim = TRUE)
       }
 
     }
-    else if(tolower(var) == "stick")
+    else if(tolower(var) == "stick"|| tolower(var) == "s")
     {
       playerValue <- count_values(player)
       dealerValue <- count_values(dealer)
@@ -125,7 +125,7 @@ blackjack <- function(sim = TRUE)
 
   if(tolower(var) == "yes" || tolower(var) == "y")
   {
-    blackjack()
+    blackjack(sim = FALSE)
   }
   else if(tolower(var) == "no" || tolower(var) == "n")
   {
